@@ -1,4 +1,3 @@
-
 // Loading variables with form inputs
 const fName = document.querySelector("#fName");
 const lName = document.querySelector("#lName");

@@ -30,6 +30,8 @@
       <!-- Matching pattern in input for phone number -->
       <label for="phone">Phone Number:</label>
       <input type="tel" name="phone" pattern="^\+91[0-9]{10}$" required>
+      <!-- input email id -->
+      <label for="email">Email ID:</label>
       <input name="submit" class="btn" type="submit" value="Submit">
       <!-- Submit button. -->
     </form>
@@ -47,7 +49,7 @@
     ?>
   </div>
   <!-- Embedding script -->
-  <script src="JS/script1.js"></script>
+  <script src="js/script1.js"></script>
 </body>
 
 </html>
