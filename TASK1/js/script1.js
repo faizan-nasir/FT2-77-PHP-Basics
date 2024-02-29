@@ -1,13 +1,13 @@
 // Loading variables with form inputs
-const fName = document.querySelector("#fName");
-const lName = document.querySelector("#lName");
-const fullName = document.querySelector("#fullName");
+const fname = document.querySelector("#fname");
+const lname = document.querySelector("#lname");
+const fullname = document.querySelector("#fullname");
 
-function concatName() {
+function concat_name() {
   // Function to concatenate first name with last name and update the fullname.
-  fullName.value = fName.value + " " + lName.value;
+  fullname.value = fname.value + " " + lname.value;
 }
 
 // Invoke concatName function on input event.
-fName.addEventListener("input", concatName);
-lName.addEventListener("input", concatName);
+fname.addEventListener("input", concat_name);
+lname.addEventListener("input", concat_name);

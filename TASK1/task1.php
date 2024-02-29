@@ -15,13 +15,13 @@
     <form action="task1.php" method="post" enctype="multipart/form-data">
       <!-- Form for taking input. -->
       <label for="firstname">First Name: </label>
-      <input type="text" name="firstname" pattern="^[a-z A-Z]*$" required id="fName">
+      <input type="text" name="firstname" pattern="^[a-z A-Z]*$" required id="fname">
       <!-- Matching pattern in input field and making it required. -->
       <label for='lastname'>Last Name:</label>
-      <input type="text" name="lastname" pattern="^[a-zA-Z]*$" required id="lName">
+      <input type="text" name="lastname" pattern="^[a-zA-Z]*$" required id="lname">
       <!-- Matching pattern in input field and making it required. -->
       <label for="fullname">Full Name:</label>
-      <input type="text" name="fullname" disabled id="fullName">
+      <input type="text" name="fullname" disabled id="fullname">
       <!-- Disabled Field to hold full name. -->
       <input type="file" name="image" required>
       <!-- Input Image. -->
@@ -36,6 +36,7 @@
       <!-- Submit button. -->
     </form>
   </div>
+  <!-- Embedding script -->
   <div class="success">
     <!-- Container for output. -->
     <?php
@@ -48,8 +49,8 @@
 
     ?>
   </div>
-  <!-- Embedding script -->
-  <script src="js/script1.js"></script>
+
+  <script src="./js/script1.js"></script>
 </body>
 
 </html>
