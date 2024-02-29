@@ -8,21 +8,28 @@
 
 /* Styling Tags. */
 body {
+  margin: 10px;
   background-color: #7881ab;
 }
 
 /* Styling form and form elements .*/
 .forms {
+  margin: 0 auto;
   background-color: silver;
-  margin: 40px;
-  width: 400px;
+  width: 500px;
   padding: 20px;
   border: 1px solid black;
   border-radius: 35%;
 }
 
-.forms > *{
-  margin-left: 30%;
+.forms form{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: center;
+  text-align: center;
+  width: 50%;
+  margin: 0 auto;
 }
 
 /* Styling Button. */

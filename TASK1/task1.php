@@ -15,21 +15,21 @@
     <form action="task1.php" method="post" enctype="multipart/form-data">
       <!-- Form for taking input. -->
       <label for="firstname">First Name: </label>
-      <input type="text" name="firstname" pattern="^[a-z A-Z]*$" required id="fName"><br><br>
+      <input type="text" name="firstname" pattern="^[a-z A-Z]*$" required id="fName">
       <!-- Matching pattern in input field and making it required. -->
       <label for='lastname'>Last Name:</label>
-      <input type="text" name="lastname" pattern="^[a-zA-Z]*$" required id="lName"><br><br>
+      <input type="text" name="lastname" pattern="^[a-zA-Z]*$" required id="lName">
       <!-- Matching pattern in input field and making it required. -->
       <label for="fullname">Full Name:</label>
-      <input type="text" name="fullname" disabled id="fullName"><br><br>
+      <input type="text" name="fullname" disabled id="fullName">
       <!-- Disabled Field to hold full name. -->
-      <input type="file" name="image" required><br><br>
+      <input type="file" name="image" required>
       <!-- Input Image. -->
       <!-- Text Area to hold subject name and score. -->
-      <textarea name="score" id="score" cols="20" rows="10" required></textarea><br><br>
+      <textarea name="score" id="score" cols="20" rows="10" required></textarea>
       <!-- Matching pattern in input for phone number -->
       <label for="phone">Phone Number:</label>
-      <input type="tel" name="phone" pattern="^\+91[0-9]{10}$" required><br><br>
+      <input type="tel" name="phone" pattern="^\+91[0-9]{10}$" required>
       <input name="submit" class="btn" type="submit" value="Submit">
       <!-- Submit button. -->
     </form>
