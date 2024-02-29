@@ -1,0 +1,46 @@
+
+/* Universal Selector. */
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+/* Styling Tags. */
+body {
+  background-color: #7881ab;
+}
+
+
+
+/* Styling form and form elements */
+.forms {
+  background-color: silver;
+  margin: 40px;
+  width: 400px;
+  padding: 20px;
+  border: 1px solid black;
+  border-radius: 35%;
+}
+.forms > *{
+  margin-left: 30%;
+}
+.btn {
+  padding: 5px;
+  border-radius: 30px;
+  cursor: pointer;
+}
+.success {
+  margin: 40px;
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+  position: absolute;
+  top: 400px;
+  word-wrap: break-word;
+  padding: 5px;
+  text-align: center;
+}
+.success img{
+  width: 300px;
+}
