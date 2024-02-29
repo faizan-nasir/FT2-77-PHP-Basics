@@ -12,7 +12,7 @@
 <body>
   <div class="forms">
     <!-- Container to hold the form -->
-    <form action="task1.php" method="post" enctype="multipart/form-data">
+    <form action="./form_submit.php" method="post" enctype="multipart/form-data">
       <!-- Form for taking input. -->
       <label for="firstname">First Name: </label>
       <input type="text" name="firstname" pattern="^[a-z A-Z]*$" required id="fname">
@@ -37,19 +37,6 @@
     </form>
   </div>
   <!-- Embedding script -->
-  <div class="success">
-    <!-- Container for output. -->
-    <?php
-
-    // Required necessary files
-    require './output.php';
-    require './image.php';
-    require './number.php';
-    require './score.php';
-
-    ?>
-  </div>
-
   <script src="./js/script1.js"></script>
 </body>
 
