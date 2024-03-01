@@ -32,6 +32,7 @@
       <input type="tel" name="phone" pattern="^\+91[0-9]{10}$" required>
       <!-- input email id -->
       <label for="email">Email ID:</label>
+      <input type="text" name="email" required>
       <input name="submit" class="btn" type="submit" value="Submit">
       <!-- Submit button. -->
     </form>

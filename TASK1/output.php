@@ -1,5 +1,5 @@
 <?php
-
+require 'creds.php';
 // Check if submit is set in post method then display hello fullname.
 if (isset($_POST['submit'])) {
   // Render hello fullname
@@ -18,7 +18,7 @@ if (isset($_POST['submit'])) {
     ?>
       <img src=<?= $file_name ?> alt='User Image'>
     <?php
-    
+
     }
     else {
       // If upload failed show unsuccessful message.
@@ -64,4 +64,33 @@ if (isset($_POST['submit'])) {
   <p>
   <?php
 
+  }
+  if (isset($_POST['submit']) && isset($_POST['email']) &&
+  filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)){
+    $ch=curl_init();
+    curl_setopt_array($ch,[
+      CURLOPT_URL => "https://emailvalidation.abstractapi.com/v1/?api_key=$api_key&email=$email",
+      CURLOPT_RETURNTRANSFER => true,
+      CURLOPT_FOLLOWLOCATION => true
+    ]);
+    $response =curl_exec($ch);
+    curl_close($ch);
+    $data=json_decode($response,true);
+    if (($data['deliverability'] === 'UNDELIVERABLE') || ($data['is_disposable_mail'] === true)){
+      ?>
+      <p>Invalid Email</p>
+    <?php
+    }
+    else{
+    ?>
+    <p>Email Syntax valid</p>
+    <p><?=$_POST['email']?></p>
+  <?php
+
+    }
+  }
+  else{
+    ?>
+    <p>Email Syntax Invalid</p>
+    <?php
   }

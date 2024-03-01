@@ -8,17 +8,17 @@
 /* Styling Tags. */
 body {
   margin: 10px;
-  background-color: #7881ab;
+  background-color: black;
 }
 
 /* Styling form and form elements .*/
 .forms {
   margin: 0 auto;
   background-color: silver;
-  width: 500px;
+  width: 550px;
   padding: 20px;
   border: 1px solid black;
-  border-radius: 35%;
+  border-radius: 20%;
 }
 
 .forms form{
@@ -40,7 +40,9 @@ body {
 
 /* Styling div to be shown on submit. */
 .success {
-  border-radius: 20px;
+  background-color: silver;
+  border-radius: 30px;
+  width: 500px;
   margin: 0 auto;
   display: flex;
   gap: 10px;
