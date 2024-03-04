@@ -1,96 +1,54 @@
 <?php
-require 'creds.php';
-// Check if submit is set in post method then display hello fullname.
-if (isset($_POST['submit'])) {
-  // Render hello fullname
-  ?>
-  <p>Hello <?= $_POST['firstname'] ?> <?= $_POST['lastname'] ?><p>
-  <?php
 
-  }
-
-  if (isset($_POST['submit']) && (isset($_FILES['image']))) {
-    // If files are uploaded on submit then save image in server
-    $file_name = './images/' . $_FILES['image']['name'];
-    $tmp_name = $_FILES['image']['tmp_name'];
-    if (move_uploaded_file($tmp_name, $file_name)) {
-      // If upload was successful render the image.
-    ?>
-      <img src=<?= $file_name ?> alt='User Image'>
+require 'form_validate.php';
+// Validate the form.
+// If errors are encountered during validation display them.
+if (!empty($errors)) {
+?>
+  <ul><?php foreach ($errors as $i) : { ?>
+        <li><?php echo $i; ?></li>
     <?php
 
-    }
-    else {
-      // If upload failed show unsuccessful message.
+        }
+      endforeach;
     ?>
-      <p>Image Upload Unsuccessful<p>
-    <?php
-
-    }
-  }
-  if (isset($_POST['submit'])) {
-    // If submitted then split the text area string based on new lines.
-    $subjects = explode("\n", $_POST['score']);
-    // Display the table for scores.
-    ?>
-    <table class='marks'>
-      <thead>
-        <tr>
-          <th>Subjects</th>
-          <th>Score</th>
-        </tr>
-      </thead>
-      <tbody>
+  </ul>
+<?php
+}
+// When no issues are detected display the content.
+else {
+?>
+  <p>Hello <?= $_POST['firstname'] ?> <?= $_POST['lastname'] ?>
+  <p>
+    <img src=<?= $file_name ?> alt='User Image'>
+  <table class='marks'>
+    <thead>
+      <tr>
+        <th>Subjects</th>
+        <th>Score</th>
+      </tr>
+    </thead>
+    <tbody>
       <?php
-      // For every individual subject render the row
+
+      $subjects = explode("\n", $_POST['score']);
       foreach ($subjects as $i) {
-        // Split subject name and score based on '|'.
         $subject = explode('|', $i);
-      }
-    ?>
+      ?>
         <tr>
           <td><?= $subject[0] ?></td>
           <td><?= $subject[1] ?></td>
-        </tr>
-      </tbody>
-    </table>
-<?php
+      <?php
 
-  }
-  if (isset($_POST['submit'])) {
-    // If submit is set display the phone number
-?>
+      }
+      ?>
+        </tr>
+    </tbody>
+  </table>
   <p>The number is <?= $_POST['phone'] ?>
   <p>
-  <?php
+  <p><?= $_POST['email'] ?></p>
+  <p>Valid Email ID</p>
+<?php
 
-  }
-  if (isset($_POST['submit']) && isset($_POST['email']) &&
-  filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)){
-    $ch=curl_init();
-    curl_setopt_array($ch,[
-      CURLOPT_URL => "https://emailvalidation.abstractapi.com/v1/?api_key=$api_key&email=$email",
-      CURLOPT_RETURNTRANSFER => true,
-      CURLOPT_FOLLOWLOCATION => true
-    ]);
-    $response =curl_exec($ch);
-    curl_close($ch);
-    $data=json_decode($response,true);
-    if (($data['deliverability'] === 'UNDELIVERABLE') || ($data['is_disposable_mail'] === true)){
-      ?>
-      <p>Invalid Email</p>
-    <?php
-    }
-    else{
-    ?>
-    <p>Email Syntax valid</p>
-    <p><?=$_POST['email']?></p>
-  <?php
-
-    }
-  }
-  else{
-    ?>
-    <p>Email Syntax Invalid</p>
-    <?php
-  }
+}
