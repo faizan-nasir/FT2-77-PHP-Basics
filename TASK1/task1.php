@@ -12,7 +12,7 @@
     <div class="forms">
       <!-- Container to hold the form -->
       <form
-        action="./form_submit.php"
+        action="./output.php"
         method="post"
         enctype="multipart/form-data"
       >
