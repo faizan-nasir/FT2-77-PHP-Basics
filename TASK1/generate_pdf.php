@@ -1,7 +1,10 @@
 <?php
 
 use Fpdf\Fpdf;
+
 require '../vendor/autoload.php';
+require './set_variables.php';
+
 
 $pdf = new Fpdf();
 $pdf->AddPage();
@@ -22,7 +25,6 @@ foreach ($score as $subject) {
   $pdf->Cell(50, 10, $i[0], 1, 0, 'C', false, '');
   $pdf->Cell(50, 10, $i[1], 1, 0, 'C', false, '');
 }
-
 $pdf->Ln();
 $pdf->Ln();
 $pdf->Ln();
@@ -32,7 +34,6 @@ $pdf->Ln();
 $pdf->Cell(50, 10, 'Email Id:', 0, 0, 'L', false, '');
 $pdf->Cell(50, 10, $email, 0, 0, 'L', false, '');
 
-$pdf->Output('F', './pdfs/'.$name.'.pdf');
-$pdf->Output('D', $name.'.pdf');
-
-?>
+$pdf->Output('F', './pdfs/' . $email . '.pdf');
+ob_clean();
+$pdf->Output('D', $name . '.pdf');

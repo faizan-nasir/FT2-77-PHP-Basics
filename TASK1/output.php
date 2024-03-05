@@ -28,11 +28,7 @@
     }
 // When no issues are detected display the content.
     else {
-      $name = $_POST['firstname'] . ' ' . $_POST['lastname'];
-      $image = './images/' . $_FILES['image']['name'];
-      $score = explode("\n", $_POST['score']);
-      $phone = $_POST['phone'];
-      $email = $_POST['email'];
+      require './set_variables.php';
     ?>
       <p>Hello <?= $name ?><p>
       <img src=<?= $image ?> alt='User Image'>
@@ -74,6 +70,7 @@
 
 if ($is_correct) {
   require './generate_pdf.php';
+  // Saves pdf in server side. and downloads pdf at client side.
 }
 ?>
 </html>
