@@ -3,8 +3,6 @@
 use Fpdf\Fpdf;
 
 require '../vendor/autoload.php';
-require './set_variables.php';
-
 
 $pdf = new Fpdf();
 $pdf->AddPage();
