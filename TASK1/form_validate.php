@@ -34,7 +34,7 @@ if (isset($_POST['submit'])) {
     $sub = explode("\n", $_POST['score']);
     foreach ($sub as $i) {
       $i = trim($i);
-      if (!preg_match('/^[A-Za-z0-9]+\|[0-9]+$/', $i)) {
+      if (!preg_match('/^[A-Za-z0-9]+\|(?:[1-9][0-9]?|100)$/', $i)) {
         array_push($errors, 'Please match the pattern for score.');
         break;
       }
@@ -46,12 +46,12 @@ if (isset($_POST['submit'])) {
   }
   // Email verification and validation.
   if (isset($_POST['email']) && filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
-    $ch = curl_init("https://emailvalidation.abstractapi.com/v1/?api_key=$api_key&email=$email");
+    $ch = curl_init("https://emailvalidation.abstractapi.com/v1/?api_key=$api_key&email={$_POST['email']}");
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
     $data = curl_exec($ch);
     curl_close($ch);
     $result = json_decode($data, true);
-    // if ((!$result['is_valid_format']['value']) || (!$result['is_smtp_valid'])){
+    // if ((!$result['is_valid_format']['value']) || (!$result['is_smtp_valid']['value'])){
     //   array_push($errors, 'Email Id not valid.');
     // }
   }
