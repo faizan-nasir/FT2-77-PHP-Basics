@@ -11,7 +11,7 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
   else {
     header('location:is_invalid.php');
   }
-  if(isset($_SESSION['password'])){
+  if (isset($_SESSION['password'])) {
     header('location:is_valid.php');
   }
 }
