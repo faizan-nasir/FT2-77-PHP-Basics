@@ -1,0 +1,73 @@
+/* Universal Selector. */
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+/* Styling Tags. */
+body {
+  margin: 10px;
+  background-color: black;
+}
+
+/* Styling form and form elements .*/
+.forms {
+  margin: 0 auto;
+  background-color: silver;
+  width: 550px;
+  padding: 20px;
+  border: 1px solid black;
+  border-radius: 20%;
+}
+
+.forms form{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: center;
+  text-align: center;
+  width: 50%;
+  margin: 0 auto;
+}
+
+/* Styling Button. */
+.btn {
+  padding: 5px;
+  border-radius: 30px;
+  cursor: pointer;
+}
+
+/* Styling div to be shown on submit. */
+.success {
+  background-color: silver;
+  border-radius: 30px;
+  width: 500px;
+  margin: 0 auto;
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+  flex-wrap: wrap;
+  word-wrap: break-word;
+  padding: 5px;
+  text-align: center;
+}
+
+/* Resizing and centering image. */
+.success img{
+  margin: 0 auto;
+  width: 200px;
+  height: 200px;
+}
+
+/* Setting background of table */
+.marks {
+  background-color: white;
+}
+
+/* Styling table elements */
+.marks th, td{
+  border-bottom: 1px solid #ddd;
+  padding: 15px;
+  text-align: center;
+}
