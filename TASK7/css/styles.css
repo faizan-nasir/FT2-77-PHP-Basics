@@ -1,0 +1,36 @@
+/* Universal Selector. */
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+/* Styling Tags */
+body{
+  margin: 10px;
+  background: black;
+}
+/* Styling login form */
+.login{
+  margin-top: 200px;
+  margin: 0 auto;
+  width: 400px;
+  height: 300px;
+  border-radius: 30px;
+  background: silver;
+}
+.login-form{
+  width: 50%;
+  margin: 0 auto;
+  padding-top: 70px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.login-form *{
+  margin-block: 5px;
+}
+.submit{
+  padding: 5px 10px;
+  border-radius: 15px;
+}
