@@ -16,8 +16,6 @@ require './config.php';
  *
  * @param mixed $message
  *   Mail content.
- *
- * @return void
  */
 
 function send_mail($email, $subject, $message)
