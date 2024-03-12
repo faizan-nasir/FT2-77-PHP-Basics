@@ -43,6 +43,7 @@ function send_mail($email, $subject, $message)
   $mail->Subject = $subject;
   $mail->Body = $message;
   $mail->AltBody = $message;
+  // Send mail and return message.
   if (!$mail->send()) {
     return 'Error sending the message.';
   }
