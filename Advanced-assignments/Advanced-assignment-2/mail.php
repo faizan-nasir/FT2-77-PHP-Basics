@@ -5,6 +5,21 @@ use PHPMailer\PHPMailer\PHPMailer;
 require './vendor/autoload.php';
 require './config.php';
 
+/**
+ * Function to send email.
+ *
+ * @param mixed $email
+ *   Recipient email id.
+ *
+ * @param mixed $subject
+ *   Subject of the mail.
+ *
+ * @param mixed $message
+ *   Mail content.
+ *
+ * @return void
+ */
+
 function send_mail($email, $subject, $message)
 {
   // Create PHPMailer object
