@@ -5,8 +5,7 @@ require './vendor/autoload.php';
 /**
  * A Class to fetch data from the API.
  */
-class API
-{
+class API {
   // URL of the api.
   public $api_url = 'https://www.innoraft.com/jsonapi/node/services';
 
@@ -19,8 +18,7 @@ class API
   /**
    * Constructor to initialize the client.
    */
-  function __construct()
-  {
+  function __construct() {
     // Initialize the client with GuzzleHttp\Client object.
     $this->client = new GuzzleHttp\Client();
   }
@@ -31,8 +29,7 @@ class API
    * @return mixed
    *   Returns a JSON like PHP array.
    */
-  private function mainCall()
-  {
+  private function mainCall() {
     $response = $this->client->get($this->api_url);
     $response = json_decode($response->getBody(), true);
     return $response;
@@ -47,8 +44,7 @@ class API
    * @return array
    *   Returns an array containing the header and the list.
    */
-  function getText(int $index)
-  {
+  function getText(int $index) {
     $response = $this->mainCall();
     $heading = $this->client->get($response['data'][$index]['links']['self']['href']);
     $heading = json_decode($heading->getBody(), true);
@@ -62,11 +58,11 @@ class API
    *
    * @param integer $index
    *   Index of the icons.
+   *
    * @return array
    *   Returns an array containing icon paths.
    */
-  function getIcons(int $index)
-  {
+  function getIcons(int $index) {
     $response = $this->mainCall();
     $icons = [];
     $icon = $this->client->get(
@@ -93,8 +89,7 @@ class API
    * @return string
    *   Returns the source path of the image.
    */
-  function getImage(int $index)
-  {
+  function getImage(int $index) {
     $response = $this->mainCall();
     $image = $this->client->get(
       $response['data'][$index]['relationships']['field_image']['links']['related']['href']
@@ -103,18 +98,4 @@ class API
     $image = $this->domain . $image['data']['attributes']['uri']['url'];
     return $image;
   }
-}
-
-$obj = new API();
-// Stores the texts.
-$texts = [];
-// Stores the image sources.
-$images = [];
-// Stores the icon sources.
-$icons = [];
-
-for ($k = 12; $k <= 15; $k++) {
-  array_push($texts, $obj->getText($k));
-  array_push($images, $obj->getImage($k));
-  array_push($icons, $obj->getIcons($k));
 }

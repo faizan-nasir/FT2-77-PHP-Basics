@@ -1,6 +1,21 @@
 <?php
 
 require './api.php';
+
+$obj = new API();
+// Stores the texts.
+$texts = [];
+// Stores the image sources.
+$images = [];
+// Stores the icon sources.
+$icons = [];
+
+for ($k = 12; $k <= 15; $k++) {
+  array_push($texts, $obj->getText($k));
+  array_push($images, $obj->getImage($k));
+  array_push($icons, $obj->getIcons($k));
+}
+
 ?>
 
 <!DOCTYPE html>
