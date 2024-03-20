@@ -1,0 +1,51 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-color: rgb(179, 198, 222);
+}
+
+input {
+    margin: 15px 0;
+    padding: 8px;
+    border-radius: 10px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 25px auto;
+  background-color: rgb(145, 209, 244);
+  padding: 40px;
+  border-radius: 30px;
+  border: 5px solid rgb(47, 70, 70);
+}
+
+.form {
+  background-color: rgb(179, 198, 222);
+  display: flex;
+  flex-direction: column;
+  padding: 12px;
+  width: 50%;
+  border-radius: 30px;
+  margin: 0 auto;
+  box-shadow: 5px 5px grey;
+  border: 2px solid black;
+}
+
+.btn {
+  width: 25%;
+  color: white;
+  background-color: rgb(19, 56, 56);
+  border-radius: 30px;
+}
+
+.red{
+  color: red;
+}
+
+.green{
+  color: green;
+}
