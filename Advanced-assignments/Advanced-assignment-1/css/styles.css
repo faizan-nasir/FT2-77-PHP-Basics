@@ -1,0 +1,106 @@
+/* Universal Selector */
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+ul li {
+  list-style: none;
+  padding: 5px;
+}
+
+ul li::before {
+  display: inline-block;
+  content: "";
+  width: 12px;
+  height: 12px;
+  border: 2px solid #ff7900;
+  margin-right: 10px;
+  border-radius: 50%;
+}
+
+ul li a {
+  text-decoration: none;
+  color: #131313;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.flex-all {
+  display: flex;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.row-reverse {
+  flex-direction: row-reverse;
+}
+
+.space-between {
+  justify-content: space-between;
+}
+
+.space-evenly {
+  justify-content: space-evenly;
+}
+
+.flex-center {
+  align-items: center;
+}
+
+.service-item {
+  margin-block: 30px;
+  width: 100%;
+}
+.service-image {
+  width: 555px;
+  height: 450px;
+}
+
+.service-image img {
+  width: 100%;
+  height: 100%;
+}
+
+.service-title {
+  color: #ff7900;
+}
+
+.service-content {
+  gap: 20px;
+}
+
+.service-title,
+.service-secondary-title {
+  font-size: 3rem;
+  line-height: 1.4;
+  text-transform: uppercase;
+  font-family: "ss-bold";
+}
+
+.icon-holder img {
+  height: 100%;
+}
+
+.icons {
+  width: 555px;
+  height: 70px;
+  gap: 5px;
+}
+
+.btn {
+  border: 2px solid orange;
+  color: #333;
+  padding: 8px 20px;
+  border-radius: 4px;
+  text-decoration: none;
+  width: 200px;
+  font-weight: bold;
+}

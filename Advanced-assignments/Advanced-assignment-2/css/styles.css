@@ -1,0 +1,52 @@
+/* Styling universal selector */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+/* Styling Tags */
+body {
+  background-color: black;
+}
+/* Styling global class */
+.container {
+  max-width: 1320px;
+  margin: 0 auto;
+}
+
+/* Styling the form */
+.form-container {
+  width: 60%;
+  margin: 50px auto;
+}
+
+.form {
+  background-color: silver;
+  color: black;
+  display: flex;
+  margin: 0 auto;
+  flex-direction: column;
+  border: 3px solid white;
+  width: 90%;
+  padding: 30px;
+  border-radius: 30px;
+  font-size: 1.5rem;
+}
+.form * {
+  margin: 10px;
+}
+.btn {
+  width: 10%;
+  padding: 10px;
+  font-size: 14px;
+  border-radius: 30px;
+}
+.success{
+  color: green;
+  font-weight: bold;
+}
+.error{
+  color: red;
+  font-weight: bold;
+}
+
