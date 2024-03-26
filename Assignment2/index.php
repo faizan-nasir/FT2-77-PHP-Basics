@@ -1,34 +1,7 @@
 <?php
 
-require './creds.php';
-require './Database.php';
+require './action.php';
 
-$message = '';
-$class = 'red';
-if (isset($_POST['submit'])) {
-  if (
-    !empty($_POST['employee_code']) &&
-    !empty($_POST['employee_code_name']) &&
-    !empty($_POST['employee_domain']) &&
-    !empty($_POST['employee_id']) &&
-    !empty($_POST['employee_first_name']) &&
-    !empty($_POST['employee_last_name']) &&
-    !empty($_POST['employee_salary']) &&
-    !empty($_POST['graduation_percentile'])
-  ) {
-    $obj = new Database($server_name, $user_name, $password, $db_name);
-    if ($obj->insertToData()) {
-      $message = 'Insertion Successful!';
-      $class =
-        'green';
-    } else {
-      $message = 'Insertion unsuccessful!';
-    }
-    $obj->dbClose();
-  } else {
-    $message = 'All fields are required!';
-  }
-}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -45,12 +18,12 @@ if (isset($_POST['submit'])) {
     <form class="form" action="./index.php" method="post">
       <?php
 
-      if ($message != '') {
+      if ($message != ''):
       ?>
         <p class="<?= $class ?>"><?= $message ?></p>
       <?php
 
-      }
+      endif
       ?>
       <input type="text" name="employee_code" placeholder="Employee Code" required />
       <input type="text" name="employee_code_name" placeholder="Employee Code Name" required />

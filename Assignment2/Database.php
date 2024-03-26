@@ -14,10 +14,10 @@ class Database {
   // Connection object.
   public $conn;
 
-  // Variables for holding queries.
-  public $q1;
-  public $q2;
-  public $q3;
+  // Variables for holding SQL queries.
+  public $sql1;
+  public $sql2;
+  public $sql3;
 
   /**
    * Constructor to initialize credentials and establish connection.
@@ -50,22 +50,22 @@ class Database {
    * @return bool
    *   Returns TRUE on data insertion success and false otherwise.
    */
-  function insertToData() {
-    $this->q1 = "INSERT INTO employee_code_table (
+  public function insertToData() {
+    $this->sql1 = "INSERT INTO employee_code_table (
       employee_code, employee_code_name, employee_domain) values (
         '{$_POST["employee_code"]}',
         '{$_POST["employee_code_name"]}',
         '{$_POST["employee_domain"]}'
       )";
 
-    $this->q2 = "INSERT INTO employee_salary_table (
+    $this->sql2 = "INSERT INTO employee_salary_table (
       employee_id, employee_salary, employee_code) values (
         '{$_POST["employee_id"]}',
         '{$_POST["employee_salary"]}',
         '{$_POST["employee_code"]}'
       )";
 
-    $this->q3 = "INSERT INTO employee_details_table (
+    $this->sql3 = "INSERT INTO employee_details_table (
       employee_id,
       employee_first_name,
       employee_last_name,
@@ -78,16 +78,16 @@ class Database {
       )";
 
     return (
-      $this->conn->query($this->q1) === TRUE &&
-      $this->conn->query($this->q2) === TRUE &&
-      $this->conn->query($this->q3) === TRUE
+      $this->conn->query($this->sql1) === TRUE &&
+      $this->conn->query($this->sql2) === TRUE &&
+      $this->conn->query($this->sql3) === TRUE
     );
   }
 
   /**
    * Function to close database.
    */
-  function dbClose() {
+  public function dbClose() {
     $this->conn->close();
   }
 }
